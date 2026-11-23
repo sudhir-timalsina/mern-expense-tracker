@@ -1,0 +1,98 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1d2433;
+  --muted: #6b7385;
+  --border: #e3e7ef;
+  --primary: #2f6fed;
+  --primary-dark: #1f56c4;
+  --danger: #d64545;
+  --radius: 12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+
+.header { margin-bottom: 20px; }
+.header h1 { margin: 0; font-size: 1.8rem; }
+.header p { margin: 4px 0 0; color: var(--muted); }
+
+.layout { display: grid; grid-template-columns: 380px 1fr; gap: 20px; align-items: start; }
+.column { display: flex; flex-direction: column; gap: 20px; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(20, 30, 60, 0.05);
+}
+.card h2 { margin: 0 0 14px; font-size: 1.1rem; }
+.muted { color: var(--muted); text-align: center; }
+
+label { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: var(--muted); margin-bottom: 12px; flex: 1; min-width: 0; }
+input, select, textarea {
+  width: 100%; min-width: 0;
+  font: inherit; color: var(--text);
+  padding: 9px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); outline-offset: -1px; }
+.row { display: flex; gap: 12px; }
+
+button {
+  font: inherit; cursor: pointer;
+  padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+}
+button.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+button.primary:hover { background: var(--primary-dark); }
+button:disabled { opacity: 0.6; cursor: wait; }
+button.link { border: none; background: none; padding: 2px 4px; color: var(--primary); }
+button.link.danger { color: var(--danger); }
+.actions { display: flex; gap: 8px; }
+
+.form-error { color: var(--danger); font-size: 0.85rem; margin: 0 0 10px; }
+.alert {
+  background: #fdecec; color: #8a2020; border: 1px solid #f5c2c2;
+  padding: 10px 14px; border-radius: 8px; margin-bottom: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.filters { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.filters label { margin-bottom: 0; min-width: 150px; }
+
+.list { list-style: none; padding: 0; margin: 0; }
+.item { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.item:last-child { border-bottom: none; }
+.item-main { display: flex; gap: 12px; align-items: flex-start; min-width: 0; }
+.item-side { text-align: right; white-space: nowrap; }
+.sub { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+.amount { font-weight: 600; }
+.item-actions { margin-top: 4px; }
+
+.badge { font-size: 0.72rem; padding: 3px 8px; border-radius: 999px; background: #eef1f7; color: #3a4357; white-space: nowrap; }
+.badge-food { background: #fff1e0; color: #9a5a00; }
+.badge-transport { background: #e6f0ff; color: #1f56c4; }
+.badge-rent { background: #f1e8ff; color: #6236b5; }
+.badge-utilities { background: #e5f7f4; color: #11766a; }
+.badge-education { background: #e8f6e8; color: #2b7a2b; }
+.badge-health { background: #fde8ee; color: #a8264f; }
+.badge-entertainment { background: #fff6d6; color: #8a6d00; }
+.badge-shopping { background: #ffe9f8; color: #a02a84; }
+
+.stats { display: flex; gap: 24px; margin-bottom: 16px; }
+.stats > div { display: flex; flex-direction: column; }
+.stat-label { color: var(--muted); font-size: 0.8rem; }
+.stat-value { font-size: 1.4rem; font-weight: 700; }
+
+.bars { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.bar-label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px; }
+.bar-track { height: 8px; background: #eef1f7; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--primary); border-radius: 999px; }
+
+.footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 32px; }
